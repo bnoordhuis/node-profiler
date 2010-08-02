@@ -11,7 +11,7 @@ struct ProfilerArguments {
   const int tag;
 
   inline ProfilerArguments(const Arguments& args)
-    : flags (args.Length() >= 1 ? args[0]->Uint32Value() : PROFILER_MODULE_CPU)
+    : flags (args.Length() >= 1 ? args[0]->Uint32Value() : -1)
     , tag   (args.Length() >= 2 ? args[1]->Uint32Value() : 0)
   {
   }
