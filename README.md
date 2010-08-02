@@ -2,6 +2,15 @@
 
 Access the V8 profiler from node.js - http://nodejs.org/
 
+## A word of advice
+
+This module is for people who need run-time control over V8's profiler. If all you want
+is wholesale profiling, you don't need it. Simply start `node` with profiling enabled:
+
+	node --prof application.js
+
+Read on, however, if you want to wield the arcane powers this module grants.
+
 ## Compiling
 
 When the stars are right - i.e. when `node-waf` is not broken:
@@ -17,13 +26,7 @@ Yes, it sucks. But not as much as an Elder God trying to extract your brains thr
 
 ## Usage
 
-This module is for people who need run-time control over V8's profiler.
-Run your app like this if all you want is wholesale profiling.
-
-	node --prof application.js
-
-If you use this module then in most cases you will want to start
-your application with the profiler in suspended animation.
+In most cases you will want to start your application with the profiler in suspended animation.
 
 	node --prof --prof_lazy application.js
 
@@ -39,7 +42,11 @@ And inside your application:
 	//
 	profiler.pause();
 
-This results in a v8.log being written to the current directory that you can process with the V8 profiling tools. See http://code.google.com/p/v8/wiki/V8Profiler for more information.
+This results in a v8.log being written to the current directory that you can process with the V8 profiling tools.
+
+See http://code.google.com/p/v8/wiki/V8Profiler for more information.
+
+## Advanced usage
 
 By default, everything that can be profiled, is: heap and CPU usage, and JS object construction.
 This can be customized by passing a bitwise OR of the following flags to resume() and pause():
