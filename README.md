@@ -39,8 +39,7 @@ And inside your application:
 	//
 	profiler.pause();
 
-This results in a v8.log being written to the current directory that you can process
-with the V8 profiling tools. See http://code.google.com/p/v8/wiki/V8Profiler for more information.
+This results in a v8.log being written to the current directory that you can process with the V8 profiling tools. See http://code.google.com/p/v8/wiki/V8Profiler for more information.
 
 By default, everything that can be profiled, is: heap and CPU usage, and JS object construction.
 This can be customized by passing a bitwise OR of the following flags to resume() and pause():
