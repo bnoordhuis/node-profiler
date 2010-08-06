@@ -17,6 +17,12 @@ struct ProfilerArguments {
   }
 };
 
+static Handle<Value> GC(const Arguments& args) {
+  HandleScope scope;
+  while (!V8::IdleNotification());
+  return Undefined();
+}
+
 static Handle<Value> Resume(const Arguments& args) {
   HandleScope scope;
   const ProfilerArguments pa(args);
@@ -42,6 +48,7 @@ static Handle<Value> HeapUsed(Local<String> property, const AccessorInfo& info) 
 extern "C" void init(Handle<Object> target) {
   HandleScope scope;
 
+  target->Set(String::New("gc"), FunctionTemplate::New(GC)->GetFunction());
   target->Set(String::New("pause"), FunctionTemplate::New(Pause)->GetFunction());
   target->Set(String::New("resume"), FunctionTemplate::New(Resume)->GetFunction());
 

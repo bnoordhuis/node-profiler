@@ -64,3 +64,9 @@ You can optionally pass a tag to uniquely mark a section in the v8.log:
 	// <performance critical code here>
 	//
 	profiler.pause(profiler.CPU, 42);
+
+You will sometimes want to run the garbage collector before profiling
+a performance critical section of code. No problem, we got your back!
+
+    profiler.gc();
+    profiler.resume(profiler.CPU | profiler.HEAP_STATS);
