@@ -32,17 +32,11 @@ static Handle<Value> Pause(const Arguments& args) {
 }
 
 static Handle<Value> HeapSize(Local<String> property, const AccessorInfo& info) {
-  HandleScope scope;
-  HeapStatistics stats;
-  V8::GetHeapStatistics(&stats);
-  return scope.Close(Integer::New(stats.total_heap_size()));
+  return ThrowException(Exception::Error(String::New("profiler.heapSize is deprecated, use process.memoryUsage().heapTotal instead.")));
 }
 
 static Handle<Value> HeapUsed(Local<String> property, const AccessorInfo& info) {
-  HandleScope scope;
-  HeapStatistics stats;
-  V8::GetHeapStatistics(&stats);
-  return scope.Close(Integer::New(stats.used_heap_size()));
+  return ThrowException(Exception::Error(String::New("profiler.heapUsed is deprecated, use process.memoryUsage().heapUsed instead.")));
 }
 
 extern "C" void init(Handle<Object> target) {
@@ -51,8 +45,8 @@ extern "C" void init(Handle<Object> target) {
   target->Set(String::New("pause"), FunctionTemplate::New(Pause)->GetFunction());
   target->Set(String::New("resume"), FunctionTemplate::New(Resume)->GetFunction());
 
-  target->SetAccessor(String::New("heapSize"), HeapSize);
-  target->SetAccessor(String::New("heapUsed"), HeapUsed);
+  target->SetAccessor(String::New("heapSize"), HeapSize, 0, Undefined(), DEFAULT, DontEnum);
+  target->SetAccessor(String::New("heapUsed"), HeapUsed, 0, Undefined(), DEFAULT, DontEnum);
 
   const PropertyAttribute attribs = (PropertyAttribute) (ReadOnly | DontDelete);
   target->Set(String::New("CPU"), Integer::New(PROFILER_MODULE_CPU), attribs);

@@ -71,11 +71,3 @@ You can optionally pass a tag to uniquely mark a section in the v8.log:
 	// <performance critical code here>
 	//
 	profiler.pause(profiler.CPU, 42);
-
-Last but not least, the `profiler` object exposes the properties `heapSize` and `heapUsed` that
-reflect the total size of V8's heap and the part of the heap that is actually in use, respectively.
-
-	var profiler = require('./profiler'), puts = require('sys').puts;
-	puts('Heap size: ' + profiler.heapSize);
-	puts('Heap used: ' + profiler.heapUsed);
-
