@@ -13,16 +13,9 @@ Read on, however, if you want to wield the arcane powers this module grants.
 
 ## Compiling
 
-When the stars are right - i.e. when `node-waf` is not broken:
+Easy as pie:
 
-	node-waf
-
-On every other day of the aeon:
-
-	export NODE_PATH=/path/to/nodejs
-	g++ -I$NODE_PATH/include/node -O2 -fPIC -shared -Wall -ansi -o profiler.node profiler.cc
-
-Yes, it sucks. But not as much as an Elder God trying to extract your brains through your nose.
+	node-waf configure build install
 
 ## Usage
 
@@ -32,7 +25,7 @@ In most cases you will want to start your application with the profiler in suspe
 
 And inside your application:
 
-	var profiler = require('./profiler');
+	var profiler = require('profiler');
 	//
 	// <here be code you don't want to profile>
 	//
