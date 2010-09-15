@@ -1,0 +1,21 @@
+{
+	"name": "profiler",
+	"main": "build/default/profiler",
+	"version": "1.0.0",
+	"description": "Access the V8 profiler from node.js ",
+	"homepage": "http://github.com/bnoordhuis/node-profiler",
+	"engines": [ "*" ],
+	"author": {
+		"name": "Ben Noordhuis",
+		"email": "info@bnoordhuis.nl",
+		"url": "http://bnoordhuis.nl/"
+	},
+	"scripts": {
+		"preinstall": "node-waf configure",
+		"install": "node-waf build install"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/bnoordhuis/node-profiler.git"
+	}
+}
