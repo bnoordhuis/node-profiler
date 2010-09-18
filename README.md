@@ -13,9 +13,13 @@ Read on, however, if you want to wield the arcane powers this module grants.
 
 ## Compiling
 
-Easy as pie:
+Easy as pie. To build from source:
 
 	node-waf configure build install
+
+Or, if you have `npm` installed:
+
+	npm install profiler
 
 ## Usage
 
