@@ -17,31 +17,31 @@ struct ProfilerArguments {
   }
 };
 
-static Handle<Value> GC(const Arguments& args) {
+Handle<Value> GC(const Arguments& args) {
   HandleScope scope;
   while (!V8::IdleNotification());
   return Undefined();
 }
 
-static Handle<Value> Resume(const Arguments& args) {
+Handle<Value> Resume(const Arguments& args) {
   HandleScope scope;
   const ProfilerArguments pa(args);
   V8::ResumeProfilerEx(pa.flags, pa.tag);
   return Undefined();
 }
 
-static Handle<Value> Pause(const Arguments& args) {
+Handle<Value> Pause(const Arguments& args) {
   HandleScope scope;
   const ProfilerArguments pa(args);
   V8::PauseProfilerEx(pa.flags, pa.tag);
   return Undefined();
 }
 
-static Handle<Value> HeapSize(Local<String> property, const AccessorInfo& info) {
+Handle<Value> HeapSize(Local<String> property, const AccessorInfo& info) {
   return ThrowException(Exception::Error(String::New("profiler.heapSize is deprecated, use process.memoryUsage().heapTotal instead.")));
 }
 
-static Handle<Value> HeapUsed(Local<String> property, const AccessorInfo& info) {
+Handle<Value> HeapUsed(Local<String> property, const AccessorInfo& info) {
   return ThrowException(Exception::Error(String::New("profiler.heapUsed is deprecated, use process.memoryUsage().heapUsed instead.")));
 }
 
