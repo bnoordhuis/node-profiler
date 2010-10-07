@@ -1,7 +1,7 @@
 {
 	"name": "profiler",
 	"main": "build/default/profiler",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Access the V8 profiler from node.js ",
 	"homepage": "http://github.com/bnoordhuis/node-profiler",
 	"author": {
