@@ -4,7 +4,6 @@
 	"version": "1.0.0",
 	"description": "Access the V8 profiler from node.js ",
 	"homepage": "http://github.com/bnoordhuis/node-profiler",
-	"engines": [ "*" ],
 	"author": {
 		"name": "Ben Noordhuis",
 		"email": "info@bnoordhuis.nl",
