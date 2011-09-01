@@ -1,2 +1,3 @@
-.lock-wscript
-build/
+/.lock-wscript
+/build/
+/nprof
