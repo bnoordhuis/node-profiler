@@ -1,0 +1,17 @@
+#!/bin/sh
+
+pwd=`dirname $0`
+nprof=$pwd/../nprof
+
+cat \
+  $pwd/nprof-stub.js \
+  $pwd/splaytree.js \
+  $pwd/codemap.js \
+  $pwd/csvparser.js \
+  $pwd/consarray.js \
+  $pwd/profile.js \
+  $pwd/profile_view.js \
+  $pwd/logreader.js \
+  $pwd/tickprocessor.js \
+  $pwd/tickprocessor-driver.js > $nprof || exit 1
+chmod 755 $nprof || exit 2
