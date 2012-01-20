@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-LOG_FNAME = 'v8.log';
+LOG_FNAME = process.argv[2] || 'v8.log';
 
 function print(s) {
   console.log('%s', s);
