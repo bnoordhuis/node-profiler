@@ -42,7 +42,7 @@ And inside your application:
     profiler.pause();
 
 This results in a v8.log being written to the current directory that you can
-process with the bundled `nprof` tool.
+process with the bundled `nprof` tool. Run `sh tools/build-nprof` to build it.
 
 ## Advanced usage
 
