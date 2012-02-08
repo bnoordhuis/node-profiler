@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-LOG_FNAME = process.argv[2] || 'v8.log';
+function quit(status) {
+  process.exit(status || 0);
+}
 
 function print(s) {
   console.log('%s', s);
@@ -11,7 +13,11 @@ function read(fileName) {
 }
 
 var readline = (function() {
-  var i = 0, lines = read(LOG_FNAME).split("\n");
+  // find first non-option, use as log file to read, default to v8.log
+  var args = process.argv.slice(2).concat(['v8.log']).filter(function(arg) {
+    return !~arg.indexOf('--');
+  });
+  var i = 0, lines = read(args[0]).split("\n");
   return function() {
     return lines[i++];
   };
