@@ -1,7 +1,12 @@
 #!/bin/sh
 
 pwd=`dirname $0`
-nprof=$pwd/../nprof
+
+if [ -z "$1" ]; then
+  nprof=$pwd/../nprof
+else
+  nprof=$1
+fi
 
 cat \
   $pwd/nprof-stub.js \
