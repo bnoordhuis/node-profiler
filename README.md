@@ -16,11 +16,14 @@ Read on, however, if you want to wield the arcane powers this module grants.
 
 Easy as pie. To build from source:
 
-    node-gyp configure build install
+    node-waf configure build install
 
 Or, if you have `npm` installed:
 
     npm install profiler
+
+The `nprof` script has been pre-built but if you need to rebuild it, run the
+`tools/build-nprof` script (not on Windows).
 
 ## Usage
 

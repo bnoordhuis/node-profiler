@@ -6,13 +6,10 @@
 	"homepage": "https://github.com/bnoordhuis/node-profiler",
 	"main": "build/Release/profiler.node",
 	"bin": {
-		"nprof": "build/Release/nprof"
-	},
-	"dependencies": {
-		"node-gyp": "*"
+		"nprof": "bin/nprof"
 	},
 	"scripts": {
-		"preinstall": "node-gyp configure build install"
+		"preinstall": "node-waf configure build"
 	},
 	"author": {
 		"name": "Ben Noordhuis",
