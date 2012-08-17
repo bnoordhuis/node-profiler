@@ -5,6 +5,9 @@
 	"keywords": ["profiler", "profiling"],
 	"homepage": "https://github.com/bnoordhuis/node-profiler",
 	"main": "build/Release/profiler.node",
+	"bin": {
+		"nprof": "./nprof"
+	},
 	"author": {
 		"name": "Ben Noordhuis",
 		"email": "info@bnoordhuis.nl",
