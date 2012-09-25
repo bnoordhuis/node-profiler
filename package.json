@@ -5,6 +5,12 @@
 	"keywords": ["profiler", "profiling"],
 	"homepage": "https://github.com/bnoordhuis/node-profiler",
 	"main": "build/Release/profiler.node",
+	"bin": {
+		"nprof": "bin/nprof"
+	},
+	"scripts": {
+		"preinstall": "node-waf configure build"
+	},
 	"author": {
 		"name": "Ben Noordhuis",
 		"email": "info@bnoordhuis.nl",
