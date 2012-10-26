@@ -1,5 +1,5 @@
-#include <v8.h>
-#include <node.h>
+#include "v8.h"
+#include "node.h"
 
 using namespace v8;
 using namespace node;
@@ -21,7 +21,7 @@ Handle<Value> Pause(const Arguments& args) {
   return Undefined();
 }
 
-extern "C" void init(Handle<Object> target) {
+void Init(Handle<Object> target) {
   HandleScope scope;
 
   target->Set(String::New("gc"),
@@ -45,5 +45,7 @@ extern "C" void init(Handle<Object> target) {
   console->Set(String::New("profileEnd"),
                FunctionTemplate::New(Pause)->GetFunction());
 }
+
+NODE_MODULE(profiler, Init)
 
 }
