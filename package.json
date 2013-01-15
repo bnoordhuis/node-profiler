@@ -1,6 +1,6 @@
 {
 	"name": "profiler",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Access the V8 profiler from node.js",
 	"keywords": ["profiler", "profiling"],
 	"homepage": "https://github.com/bnoordhuis/node-profiler",
