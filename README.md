@@ -2,6 +2,15 @@
 
 Access the V8 profiler from node.js - http://nodejs.org/
 
+## Deprecation notice
+
+This module is effectively deprecated.  Newer versions of V8 have removed much
+of the functionality that node-profiler depends on.  As a result, it's become
+much less effective.
+
+Consider using [strong-agent](https://www.npmjs.org/package/strong-agent) if
+you want on-demand CPU profiling.
+
 ## A word of advice
 
 This module is for people who need fine-grained run-time control over the V8
