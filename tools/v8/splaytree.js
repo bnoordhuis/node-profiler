@@ -284,7 +284,7 @@ SplayTree.prototype.splay_ = function(key) {
 
 
 /**
- * Performs a preorder traversal of the tree.
+ * Performs a level-order traversal of the tree.
  *
  * @param {function(SplayTree.Node)} f Visitor function.
  * @private
