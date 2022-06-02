@@ -9,7 +9,13 @@ function print(s) {
 }
 
 function read(fileName) {
-  return require('fs').readFileSync(fileName, 'utf8');
+  var fs = require('fs');
+  if(fs.existsSync(fileName))
+     return fs.readFileSync(fileName, 'utf8');
+  else {
+    console.log("Error: File " + fileName + " does not exists");
+    quit(1);
+  }
 }
 
 var readline = (function() {
